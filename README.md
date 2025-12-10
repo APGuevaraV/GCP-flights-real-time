@@ -36,3 +36,22 @@ Una Cloud Function con trigger Pub/Sub (pull):
 - Se ejecuta automáticamente por cada mensaje recibido.
 - Procesa y valida la data.
 - Realiza inserts en BigQuery.
+
+### Almacenamiento – BigQuery
+
+Destino final de los datos.
+Se usa una tabla particionada para:
+
+- Consultas rápidas.
+- Costos optimizados.
+- Facilidad para construir dashboards sobre datos en tiempo real.
+
+##  Tecnologías Utilizadas
+
+| Componente     | Servicio                  | Uso                      |
+| -------------- | ------------------------- | ------------------------ |
+| Ingesta        | API Rest externa          | Datos en tiempo real     |
+| Productor      | Jupyter Notebook + Python | Push hacia Pub/Sub       |
+| Mensajería     | Pub/Sub                   | Transporte y colas       |
+| Procesamiento  | Cloud Functions           | ETL ligero y serverless  |
+| Almacenamiento | BigQuery                  | Analítica y persistencia |
